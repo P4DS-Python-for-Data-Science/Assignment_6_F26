@@ -55,8 +55,10 @@ class PhoneNumber:
 
     def set_exchange(self, exchange_number):
         if len(exchange_number) == 3:
-            self._number = self._number[0:3] +
-            exchange_number + self._number[6:]
+            self._number = (
+                self._number[0:3]
+                + exchange_number
+                + self._number[6:])
         else:
             raise InvalidPhoneNumber(f"The exchange number is not the " +
                                      f"correct length to get " +
@@ -74,8 +76,8 @@ class PhoneNumber:
                                      f" number.")
 
     def get_formatted_number(self):
-        return f'({self.get_area_code()}) ' +
-    f'{self.get_exchange()}-{self.get_subscriber_number()}'
+        return (f'({self.get_area_code()}) '
+                + f'{self.get_exchange()}-{self.get_subscriber_number()}')
 
     def __str__(self):
         return self.get_formatted_number()
