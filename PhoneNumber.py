@@ -70,8 +70,8 @@ class PhoneNumber:
                                      f" phone number.")
 
     def get_formatted_number(self):
-        return f'({self.get_area_code()}) {self.get_exchange()}-\
-                {self.get_subscriber_number()}'
+        return f'({self.get_area_code()}) {self.get_exchange()}-'\
+               f'{self.get_subscriber_number()}'
 
     def __str__(self):
         return self.get_formatted_number()
